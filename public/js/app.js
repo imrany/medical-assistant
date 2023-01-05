@@ -15,3 +15,69 @@ const closeMenu=()=>{
 const toLandingPage=()=>{
     window.location.href='/'
 }
+
+const tags=[
+    {
+        id:1,
+        tag:['Headache','Fatigue','Back pain','Stomachache']
+    },
+    {
+        id:2,
+        tag:['Vomiting','Neck pain','Irritability','Sleepiness']
+    },
+    {
+        id:3,
+        tag:['Weight loss','Blurred vision','Back pain','Stomachache']
+    },
+    {
+        id:4,
+        tag:['Skin rash','Swelling','Joint pain','Depressed']
+    },
+    {
+        id:5,
+        tag:['Fever','Diarrhea','Muscle aches','Coughing']
+    },
+    {
+        id:6,
+        tag:['Shortness of breath','abdominal pain','Chest pain','Change in appetite']
+    }
+]
+
+const tagSection=document.querySelector('.tag-section');
+tags.map(tag=>{
+    let i='';
+    i=`
+    <div class="column" key=${tag.id}>
+        <div class="tag">
+            <i class="fa fa-close"></i> ${tag.tag[0]}
+        </div>
+        <div class="tag">
+            ${tag.tag[1]}
+        </div>
+        <div class="tag">
+            ${tag.tag[2]}
+        </div>
+        <div class="tag">
+            ${tag.tag[3]}
+        </div>
+    </div>
+    `
+    tagSection.innerHTML+=i;
+})
+
+const questions=[
+    {
+        id:1,
+        question:'Difference between symptoms and signs of illnesses?'
+    }
+]
+const tagQuestion=document.querySelector('.tag-question');
+questions.map(tag=>{
+    let i='';
+    i=`
+    <div class='tag' key=${tag.id}>
+        ${tag.question}
+    </div>
+    `
+    tagQuestion.innerHTML+=i;
+})

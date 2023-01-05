@@ -1,8 +1,27 @@
+@media screen and (max-width:1000px) {
+    .grey-section .tag-section{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }  
+}
 @media screen and (max-width:800px) {
     nav ul,nav button{
         display: none;
     }
     nav .menu{
         display: block;
+    }
+    .grey-section .tag-section{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .grey-section .tag-question{
+        display: flex;
+    }
+}
+@media screen and (max-width:600px) {
+    .grey-section .tag-section{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
     }
 }
