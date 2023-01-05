@@ -9,8 +9,15 @@ const app=express();
 app.use(cors({}));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(express.static('public'));
 
-//routes
+//setting view engines
+app.set('view engine','ejs');
+
+//ejs routes
+app.use(require('./routes/view'));
+
+//api routes
 app.use('/api',require('./routes/API'));
 
 const port=process.env.PORT||5000;
