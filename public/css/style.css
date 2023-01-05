@@ -1,11 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Rubik+Glitch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moon+Dance:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 *{
   padding: 0;
   margin: 0;
-  font-family: 'Quicksand', monospace;
 }
 :root{
     --red:red;
@@ -21,6 +20,7 @@ html{
 }
 body{
     color: var(--body-text);
+    font-family: 'Quicksand', monospace;
 }
 .blue{
     color: var(--blue);
@@ -48,8 +48,10 @@ nav .logo img{
     height: 40px;
 }
 nav .logo .text{
-    font-family: 'Yeon Sung', cursive;
+    font-family: 'Moon Dance', cursive;
     padding: 5px 0 0 6px;
+    font-size: larger;
+    font-weight: 700;
 }
 nav ul{
     display: flex;
@@ -65,30 +67,69 @@ nav ul li a:hover{
   color: var(--blue);
   text-decoration: underline;
 }
-nav button{
+ button{
+    font-family: 'Quicksand', monospace;
     background: var(--blue);
     cursor: pointer;
     border: none;
     color: var(--white);
     font-size: 15px;
     border-radius: 6px;
-    padding: 10px;
+    padding: 10px 15px;
 }
-nav button:hover{
+ button:hover{
     background: var(--black);
 }
+nav .menu,.menu-list-bg{
+    display: none;
+    cursor: pointer;
+}
+.menu-list-bg{
+    background: 0 5px 20px 0 rgba(24, 24, 36, 0.1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+}
+.menu-list{
+ position: fixed;
+ top: 0;
+ bottom: 0;
+ left: 30%;
+ right: 0;
+ z-index: 100;
+ padding: 10vh;
+ background: var(--gray);
+}
+.menu-list ul{
+    list-style: none;
+    line-height: 30px;
+    font-size: large;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
 .content{
-    padding-top: 20vh;
+    padding: 20vh 0 10vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .content header{
+    /* font-family: 'Yeon Sung'; */
+    color: var(--black);
     width: 80vw;
 }
 section{
-    background: var(--white);
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 20px;
+    width: 80vw;
+    line-height: 22px;
+    cursor: pointer;
+}
+article{
+    padding: 5px 0;
 }

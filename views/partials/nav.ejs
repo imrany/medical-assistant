@@ -1,14 +1,27 @@
 <nav>
-    <div class="logo">
+    <div class="logo" onclick="toLandingPage()" title="Landing page">
         <img src="/assests/logo.jpg"/> 
-       <div class="text">
+        <div class="text">
             Stay Healthy
-       </div>
+        </div>
     </div>
     <ul role="navigation">
-        <li><a href="/playground">Try it</a></li>
-        <li><a href="/playground">Try it</a></li>
-        <li><a href="/playground">Try it</a></li>
+        <li><a href="/laboratory" title="Get diagnosed">Laboratory</a></li>
+        <li><a href="/laboratory" title="Local Facilities around you">Facilities</a></li>
+        <li><a href="/laboratory" title="Reviews">Reviews</a></li>
+        <li><a href="/laboratory" title="Health Blogs">Blog</a></li>
     </ul>
-    <button id="get-started">Get Started</button>
+    <button id="get-diagnosed">Get Diagnosed</button>
+    <button class="menu" onclick="openMenu()">Menu</button>
+    
 </nav>
+<div class="menu-list-bg" onclick="closeMenu()">
+    <div class="menu-list">
+        <ul role="navigation">
+            <li><a href="/laboratory" title="Get diagnosed">Laboratory</a></li>
+            <li><a href="/laboratory" title="Local Facilities around you">Facilities</a></li>
+            <li><a href="/laboratory" title="Reviews">Reviews</a></li>
+            <li><a href="/laboratory" title="Health Blogs">Blog</a></li>
+        </ul> 
+    </div>
+</div>

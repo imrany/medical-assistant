@@ -5,8 +5,8 @@ views=express.Router();
 views.get('/',(req,res)=>{
     res.render('index',{title:'Landing page'})
 });
-views.get('/playground',(req,res)=>{
-    res.render('playground',{title:'playground'})
+views.get('/laboratory',(req,res)=>{
+    res.render('playground',{title:'Laboratory'})
 });
 views.use((req,res)=>{
     res.status(404).render('notfound',{title:'Not found'})
