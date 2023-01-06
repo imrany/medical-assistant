@@ -1,10 +1,10 @@
-const express=require('express')
+const express=require('express');
 const router=express.Router();
 const {
     Ask,
-}=require('../controllers/AI')
+}=require('../controllers/AI');
 
 //post signs and sympthoms
-router.get('/',Ask)
+router.post('/',Ask)
 
 module.exports=router;

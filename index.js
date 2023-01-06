@@ -17,9 +17,6 @@ app.set('view engine','ejs');
 //ejs routes
 app.use(require('./routes/view'));
 
-//api routes
-app.use('/api',require('./routes/API'));
-
 const port=process.env.PORT||5000;
 //listening to server
 app.listen(port,()=>{

@@ -324,3 +324,13 @@ footer .social-media-links ul li a{
 .text-response .text:hover{
     box-shadow: 0 5px 20px 0 rgb(11 7 110 / 10%);
 }
+.text-error{
+    width: fit-content;
+    cursor: pointer;
+    background: var(--gray);
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
