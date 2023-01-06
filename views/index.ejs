@@ -2,6 +2,7 @@
 <%- include('./partials/head.ejs')%>
 <body>
     <%- include('./partials/nav.ejs')%>
+    <div id="about"></div>
     <div class="content">
         <header>
             <h1><span class="blue">Stay</span> Healthy</h1>
@@ -12,19 +13,19 @@
                 spreading and ensures the victim doesn't suffer from adverse complications, if left untreated for a long time.
             </article>
             <article>
-                People are advised on getting checked frequently to prevent or cure developing illnesses.
-                But many people rarely go for check ups, therefore it gets difficult for them finding out developing imfections early.
+                You are advised on getting frequent check ups to prevent or cure developing illnesses.
+                But many people rarely go for this check ups, therefore it gets difficult for them finding out developing infections early.
                 This causes adverse problems on the victim.
                 Some people live with sicknesses in their bodies that they are unaware of, this is dangerous.
             </article>
             <article>
-                This problem can be solved by providing people am easier way of getting checked early, as the infection strikes.
+                This problem can be solved by providing people an easier way of getting checked early, as the infection strikes.
                 This software provides a series of steps, any sick person can follow so as to get diagnosed and determine the possible sickness.
                 The software would determine the possible causes of the sickness, give home remedies and preventations, medical prescriptions and doses to purchase from a
                 pharmacy, this software will also give the sick user the possible location of pharmacies around the user's device.
 
             </article>
-            <br/><button id="get-diagnosed" title="Get diagnosed"><i class="fa fa-check"></i> Get Diagnosed</button>
+            <br/><button id="get-diagnosed2" title="Get diagnosed"><i class="fa fa-check"></i> Get Diagnosed</button>
         </section>
 
         <div class="grey-section">
@@ -40,12 +41,47 @@
             </section>
         </div>
 
-        <section>
+        <section class="get-started">
             <article>
-
+                <h2>Get Checked today!</h2>
+                <br/><p>Use Stay Healthy's AI-powered platform and get checked, simply enter a list of signs and symptoms of the sickness affecting you then submit. The software will respond with a list of remedies and preventations, it can also locate near pharmacies around your device.</p>
+            </article>
+            <article>
+                <form class="form-get-checked">
+                    <input type="text" placeholder="Enter your signs and symptoms" required/>
+                    <button class="form-btn">Get Checked</button>
+                </form>
             </article>
         </section>
+        <!-- <h1 style="margin: 20px 0;">Frequent Sicknesses</h1>
+        <section class="frequent-section">
+            <article>
+                Malaria
+            </article>
+            <article>
+                Cholera
+            </article>
+            <article>
+                Tuberculosis
+            </article>
+        </section> -->
+
+        <!-- <div class="grey-section">
+            <h1 style="margin: 10px 0;">Tips on staying healthy</h1>
+            <section class="frequent-section">
+                <article>
+                    Malaria
+                </article>
+                <article>
+                    Cholera
+                </article>
+                <article>
+                    Tuberculosis
+                </article>
+            </section>
+        </div> -->
     </div>
+    <%- include('./partials/float.ejs')%>
     <%- include('./partials/footer.ejs')%>
 </body>
 </html>

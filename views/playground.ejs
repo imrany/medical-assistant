@@ -2,10 +2,19 @@
 <%- include('./partials/head.ejs')%>
 <body>
     <%- include('./partials/nav.ejs')%>
-    <div class="content">
-        <header>
-            <h1><span class="blue">Stay</span> Healthy<i class="fa fa-download"></i></h1>
-        </header>
+    <div class="playground">
+        <div class="side-menu">
+            <ul>
+                <li><a href="#2"><i class="fa fa-user"></i> New Check up</a></li>
+            </ul>
+        </div>
+        <div class="text-window">
+            <div class="text-response"></div>
+            <form class="handle-submit">
+                <textarea class="playground-textarea" name='request' placeholder="How do you feel?" required></textarea>
+                <button><i class="fa fa-send"></i></button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

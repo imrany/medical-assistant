@@ -14,6 +14,7 @@
     --white:white;
     --black:black;
     --body-text:#676e8b;
+    --green:green;
 }
 html{
   scroll-behavior: smooth;
@@ -135,7 +136,7 @@ section{
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    margin: 20px 0;
+    margin: 20px 0 0 0;
     width: 100%;
     background: var(--gray);
 }
@@ -162,5 +163,164 @@ article{
     margin: 20px 0;
 }
 .tag:hover{
+    box-shadow: 0 5px 20px 0 rgb(11 7 110 / 10%);
+}
+.get-started{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    padding: 15vh 0;
+    width: 100%;
+    background: var(--blue);
+    color: var(--white);
+}
+.get-started article{
+    width: 40vw;
+    justify-self: center;
+    line-height: 25px;
+}
+.get-started .form-get-checked{
+    padding: 30px 0;
+    display: flex;
+}
+.get-started .form-get-checked input{
+    width: 25vw;
+    height: fit-content;
+    padding: 20px;
+    font-size: 12px;
+    border: none;
+    border-radius: 10px;
+}
+.get-started .form-btn{
+    border-radius: 10px;
+    background: var(--black);
+    margin-left: 10px;
+}
+.frequent-section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 20px;
+}
+footer{
+    padding: 50px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+}
+footer .info{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+footer a{
+    color: var(--grey-text);
+    font-size: medium;
+}
+footer a:hover{
+    color: var(--blue);
+}
+footer .social-media-links ul{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+}
+footer .social-media-links ul li a{
+    padding: 0 3vw;
+    font-size: 20px;
+}
+.float-whatsapp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    z-index: 200;
+    background: var(--green);
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--white);
+    height: 10vh;
+    width: 10vh;
+}
+.float-whatsapp i{
+    font-size: 30px;
+}
+.not-found{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 80px;
+}
+
+/* playground css */
+.playground{
+    padding: 60px 0 0 0;
+    /* display: grid;
+    grid-template-columns: 20vw auto; */
+}
+.playground .side-menu{
+    background: var(--blue);
+    height: 91vh;
+    display: none;
+}
+.playground .side-menu ul{
+    padding-top: 40px;
+}
+.playground .side-menu ul li{
+    padding: 10px 50px;
+    cursor: pointer;
+}
+.playground .side-menu ul li:hover{
+    box-shadow: 0 5px 20px 0 rgb(11 7 110 / 10%);
+    background: blueviolet;
+}
+.playground .side-menu ul li a{
+    color: var(--white);
+}
+.text-window{
+    padding: 40px;
+}
+.text-window form{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    background: var(--white);
+}
+.text-window form textarea{
+    width: 80vw;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.text-window form button{
+    margin-left: 20px;
+    padding: 10px 40px;
+}
+.text-window form button i{
+    font-size: 20px;
+}
+.text-response{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.text-response .text{
+    width: fit-content;
+    cursor: pointer;
+    background: var(--gray);
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+.text-response .text:hover{
     box-shadow: 0 5px 20px 0 rgb(11 7 110 / 10%);
 }

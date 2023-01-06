@@ -1,8 +1,13 @@
 
-const getStartedBtn=document.getElementById('get-diagnosed');
+const getStartedBtn=document.querySelector('#get-diagnosed');
 getStartedBtn.addEventListener('click',()=>{
     window.location.href='/laboratory'
 });
+const getStartedBtn2=document.querySelector('#get-diagnosed2');
+getStartedBtn2.addEventListener('click',()=>{
+    window.location.href='/laboratory'
+});
+
 //opens menu list
 const openMenu=()=>{
     document.querySelector('.menu-list-bg').style.display='block'
@@ -80,4 +85,22 @@ questions.map(tag=>{
     </div>
     `
     tagQuestion.innerHTML+=i;
+});
+
+
+//get chacked form
+const getCheckedForm=document.querySelector('.form-get-checked');
+getCheckedForm.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    try {
+
+    } catch (error) {
+        
+    }
+})
+
+//floating whatsapp button
+const floatWhatsapp=document.querySelector(".float-whatsapp");
+floatWhatsapp.addEventListener('click',()=>{
+    window.location.href='https://wa.me/+254754423664'
 })
