@@ -52,9 +52,9 @@ sendRequest.addEventListener('submit',async(e)=>{
             },1500)
         }else{
             i=`
-            <div class='text'>
+            <div class='text' title=${req}>
                 <h2>Q: ${req}</h2>
-                <b>A: ${parseRes}</b>
+                <b>A: ${parseRes.msg}</b>
             </div>
             `
             textResponse.innerHTML+=i
