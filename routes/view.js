@@ -52,10 +52,50 @@ views.get('/laboratory',(req,res)=>{
         },
         {
             id:4,
+            name:'Get Help',
+            url:'#',
+            title:"Get Help"
+        },
+        {
+            id:5,
             name:'Blog',
             url:'/blogs',
             title:"Health Blogs"
+        }
+    ]})
+});
+views.get('/facilities',(req,res)=>{
+    res.render('facilities',{title:'Facilities',js:'js/facilities.js',button:{name:'Get Results',id:'get-results'},paths:[
+        {
+            id:1,
+            name:'Home',
+            url:'/',
+            title:"Landing page"
         },
+        {
+            id:2,
+            name:'Laboratory',
+            url:'/laboratory',
+            title:"Get Diagnosed"
+        },
+        {
+            id:3,
+            name:'Reviews',
+            url:'/reviews',
+            title:"Reviews"
+        },
+        {
+            id:4,
+            name:'Get Help',
+            url:'#',
+            title:"Get Help"
+        },
+        {
+            id:5,
+            name:'Blog',
+            url:'/blogs',
+            title:"Health Blogs"
+        }
     ]})
 });
 

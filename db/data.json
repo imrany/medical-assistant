@@ -1,10 +1,18 @@
 [
     {
-        "signs":"Headache",
+        "signs":"headache",
         "sickness":"Malaria"
     },
     {
-        "signs":"Backache",
+        "signs":"back pain",
         "sickness":"Tuberculosis"
+    },
+    {
+        "signs":"stomach pain",
+        "sickness":"Cholera"
+    },
+    {
+        "signs":"poor sight",
+        "sickness":"blindness"
     }
 ]

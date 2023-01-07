@@ -18,6 +18,18 @@
        font-size: 12px;
        width: 25vw;
     }
+    .frequent-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .frequent-section article{
+        margin: 10px 0;
+    }
+    .frequent-section img{
+        width: 60vw;
+        height: 250px;
+    }
     footer .info{
         display: grid;
         grid-template-columns: repeat(2,1fr);

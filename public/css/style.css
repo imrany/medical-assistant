@@ -125,7 +125,6 @@ a{
     align-items: center;
 }
 .content header{
-    /* font-family: 'Yeon Sung'; */
     color: var(--black);
     width: 80vw;
 }
@@ -200,9 +199,17 @@ article{
     margin-left: 10px;
 }
 .frequent-section{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.frequent-section article{
+    margin: 0 10px;
+}
+.frequent-section img{
+    width: 27vw;
+    height: 50vh;
+    border-radius: 15px;
+    cursor: pointer;
 }
 footer{
     padding: 50px;
@@ -336,4 +343,8 @@ footer .social-media-links ul li a{
     margin: 20px 0;
     display: flex;
     flex-direction: column;
+}
+.facilities-header{
+    margin: -40px 0 10px 0;
+    text-align: center;
 }

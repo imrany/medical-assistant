@@ -18,6 +18,7 @@ const toLandingPage=()=>{
     window.location.href='/'
 }
 
+
 //sending request to openai
 let req='';
 const sendRequest=document.querySelector('.handle-submit');
@@ -52,9 +53,9 @@ sendRequest.addEventListener('submit',async(e)=>{
             },1500)
         }else{
             i=`
-            <div class='text' title=${req}>
+            <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
-                <b>A: ${parseRes.msg}</b>
+                <b>A: You are likely having ${parseRes.msg}</b>
             </div>
             `
             textResponse.innerHTML+=i
