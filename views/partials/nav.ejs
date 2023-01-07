@@ -6,22 +6,20 @@
         </div>
     </div>
     <ul role="navigation">
-        <li><a href="/laboratory" title="Get diagnosed">Laboratory</a></li>
-        <li><a href="/laboratory" title="Local Facilities around you">Facilities</a></li>
-        <li><a href="/laboratory" title="Reviews">Reviews</a></li>
-        <li><a href="/laboratory" title="Health Blogs">Blog</a></li>
+        <%paths.map(path=>{%>
+            <li key="<%= path.name%>"><a href="<%= path.url%>" title="<%= path.title%>"><%= path.name%></a></li>
+        <%})%>
     </ul>
-    <button id="get-diagnosed">Get Diagnosed</button>
+    <button id="<%= button.id%>"><%= button.name%></button>
     <i class="fa fa-list menu" onclick="openMenu()"></i>
     
 </nav>
 <div class="menu-list-bg" onclick="closeMenu()">
     <div class="menu-list">
         <ul role="navigation">
-            <li><a href="/laboratory" title="Get diagnosed">Laboratory</a></li>
-            <li><a href="/laboratory" title="Local Facilities around you">Facilities</a></li>
-            <li><a href="/laboratory" title="Reviews">Reviews</a></li>
-            <li><a href="/laboratory" title="Health Blogs">Blog</a></li>
+            <%paths.map(path=>{%>
+                <li key="<%= path.name%>"><a href="<%= path.url%>" title="<%= path.title%>"><%= path.name%></a></li>
+            <%})%>
         </ul> 
     </div>
 </div>

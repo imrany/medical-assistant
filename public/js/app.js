@@ -1,10 +1,10 @@
 
-const getStartedBtn=document.querySelector('#get-diagnosed');
-getStartedBtn.addEventListener('click',()=>{
+const getDiagnosed=document.querySelector('#get-diagnosed');
+getDiagnosed.addEventListener('click',()=>{
     window.location.href='/laboratory'
 });
-const getStartedBtn2=document.querySelector('#get-diagnosed2');
-getStartedBtn2.addEventListener('click',()=>{
+const getDiagnosed2=document.querySelector('#get-diagnosed2');
+getDiagnosed2.addEventListener('click',()=>{
     window.location.href='/laboratory'
 });
 
