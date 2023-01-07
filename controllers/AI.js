@@ -7,14 +7,14 @@ const openai=new OpenAIApi(configuration);
 
 const Ask=async(req,res)=>{
     try {
-        const model="chatgpt";
+        const model="text-ada-001";
         const response=await openai.createCompletion({
-            engine:model,
+            model,
             prompt:req.body.prompt,
-            n:1,
-            max_tokens:2048,
-            stop:'.',
-            temperature:0.5,
+            // n:1,
+            max_tokens:1,
+            // stop:'.',
+            temperature:0,
         })
         const answer=response.data.choices[0].text;
         res.status(200).send(answer);
