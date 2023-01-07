@@ -104,3 +104,14 @@ const floatWhatsapp=document.querySelector(".float-whatsapp");
 floatWhatsapp.addEventListener('click',()=>{
     window.location.href='https://wa.me/+254754423664'
 })
+
+//open objective tab
+const objective=document.querySelector('.objective');
+
+const openObjective=()=>{
+    objective.style.display='block'
+}
+//close objective tab
+objective.addEventListener('click',()=>{
+    objective.style.display='none'
+})

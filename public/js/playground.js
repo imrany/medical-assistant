@@ -36,6 +36,7 @@ sendRequest.addEventListener('submit',async(e)=>{
                 prompt:request
             })
         })
+        sendRequest.reset()
         const parseRes=await response.json();
         let i=``
         req=request
@@ -55,12 +56,14 @@ sendRequest.addEventListener('submit',async(e)=>{
             i=`
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
-                <b>A: You are likely having ${parseRes.msg}</b>
+                <b>A: ${parseRes.msg}</b>
             </div>
             `
             textResponse.innerHTML+=i
+            document.querySelector('.down').scrollIntoView()
         }
     } catch (error) {
+        sendRequest.reset()
         // display error message
         const textResponse=document.querySelector('.text-response');
         i=`

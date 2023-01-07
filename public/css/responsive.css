@@ -38,6 +38,13 @@
     footer .info .container{
         justify-self: center;
     }
+    .objective{
+        width: 80vw;
+    }
+    iframe{
+        width: 90vw; 
+        height: 70vh;
+    }
 }
 @media screen and (max-width:800px) {
     nav ul,nav button{

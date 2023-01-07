@@ -211,6 +211,22 @@ article{
     border-radius: 15px;
     cursor: pointer;
 }
+.objective{
+    position: fixed;
+    top: 200px;
+    z-index: 20px;
+    width: 40vw;
+    background: var(--gray);
+    padding: 10px 15px;
+    border-radius: 20px;
+    line-height: 25px;
+    box-shadow: 0 5px 20px 0 rgb(11 7 110 / 30%);
+}
+.objective i{
+    cursor: pointer;
+    font-size: larger;
+    padding: 10px 15px 0 0;
+}
 footer{
     padding: 50px;
     line-height: 30px;
@@ -347,4 +363,8 @@ footer .social-media-links ul li a{
 .facilities-header{
     margin: -40px 0 10px 0;
     text-align: center;
+}
+iframe{
+    width: 70vw; 
+    height: 70vh;
 }
