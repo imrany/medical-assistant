@@ -40,13 +40,25 @@ sendRequest.addEventListener('submit',async(e)=>{
         req=request
         // display user question
         const textResponse=document.querySelector('.text-response');
-        i=`
-        <div class='text'>
-            <h2>Q: ${req}</h2>
-            <b>A: ${parseRes}</b>
-        </div>
-        `
-        textResponse.innerHTML+=i
+        if(parseRes.error){
+            i=`
+            <div class='text-error'>
+                <p style="color:red;">Error: ${parseRes.msg}</p>
+            </div>
+            `
+            textResponse.innerHTML+=i
+            setTimeout(()=>{
+                textResponse.innerHTML=``
+            },1500)
+        }else{
+            i=`
+            <div class='text'>
+                <h2>Q: ${req}</h2>
+                <b>A: ${parseRes}</b>
+            </div>
+            `
+            textResponse.innerHTML+=i
+        }
     } catch (error) {
         // display error message
         const textResponse=document.querySelector('.text-response');

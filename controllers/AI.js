@@ -35,9 +35,17 @@ const Ask=async(req,res)=>{
         //         res.send(response.choices[0].text)
         //     }
         // })
-        // res.status(200).send('ok')
     } catch (error) {
-        res.status(500).send(error.message)
+        if(error.response){
+            console.log(error.response.status)
+            console.log(error.response.data)
+        }else{
+            console.log(error.message)
+        }
+        res.status(400).send({
+            error:error.message,
+            msg:'Try again!'
+        })
     }
 }
 
