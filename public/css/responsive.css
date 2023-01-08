@@ -60,6 +60,9 @@
     .grey-section .tag-question{
         display: flex;
     }
+    .location-notify{
+        width: 80vw;
+    }
 }
 @media screen and (max-width:600px) {
     .grey-section .tag-section{

@@ -107,10 +107,35 @@ floatWhatsapp.addEventListener('click',()=>{
 
 //open objective tab
 const objective=document.querySelector('.objective');
-
-const openObjective=()=>{
+const objectiveContent=document.querySelector('.objective-content');
+const openObjective=document.querySelector('.open-objective');
+openObjective.addEventListener('click',()=>{
     objective.style.display='block'
-}
+    objectiveContent.innerHTML=`
+    <b>
+        Ensuring <span style="color: green;">Healthy Lives</span> and promoting the <span style="color: green;">well-being</span>
+        for all at all ages is essential to <span style="color: green;">sustainable development</span>
+    </b>
+    `
+})
+const openObjective1=document.querySelector('.open-objective1');
+openObjective1.addEventListener('click',()=>{
+    objective.style.display='block'
+    objectiveContent.innerHTML=`
+    <b>
+        <span style="color: green;">Healthy</span> Living.
+    </b>
+    `
+})
+const openObjective2=document.querySelector('.open-objective2');
+openObjective2.addEventListener('click',()=>{
+    objective.style.display='block'
+    objectiveContent.innerHTML=`
+    <b>
+        <span style="color: green;">Healthy</span> Eating.
+    </b>
+    `
+})
 //close objective tab
 objective.addEventListener('click',()=>{
     objective.style.display='none'

@@ -7,7 +7,7 @@ const trainingData=data.map(item=>({
     output: item.sickness
 }));
 network.train(trainingData,{
-    iterations:2000,
+    iterations:100,
 });
 
 const Ask=async(req,res)=>{

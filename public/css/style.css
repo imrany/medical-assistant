@@ -368,3 +368,16 @@ iframe{
     width: 70vw; 
     height: 70vh;
 }
+.location-notify{
+    position: fixed;
+    top: 200px;
+    width: 40vw;
+}
+.location-tag{
+    z-index: 20px;
+    background: var(--gray);
+    padding: 10px 15px;
+    border-radius: 20px;
+    line-height: 25px;
+    box-shadow: 0 5px 20px 0 rgb(11 7 110 / 30%);
+}
