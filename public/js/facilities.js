@@ -3,13 +3,16 @@ getResults.addEventListener('click',()=>{
     window.location.href='/results'
 });
 //opens menu list
-const openMenu=()=>{
+const openMenu=document.querySelector('.menu');
+openMenu.addEventListener('click',()=>{
     document.querySelector('.menu-list-bg').style.display='block'
-}
+})
 //close menu list
-const closeMenu=()=>{
+const closeMenu= document.querySelector('.menu-list-bg');
+closeMenu.addEventListener('click',()=>{
     document.querySelector('.menu-list-bg').style.display='none'
-}
+})
+
 //goes to landing page
 const toLandingPage=()=>{
     window.location.href='/'

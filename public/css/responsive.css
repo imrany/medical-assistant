@@ -70,6 +70,10 @@
         grid-template-columns: repeat(2,1fr);
         font-size: small;
     }
+    .frequent-section img{
+        width: 80vw;
+        height: 250px;
+    }
     footer .info{
         display: flex;
         flex-direction: column;
