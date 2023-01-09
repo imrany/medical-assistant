@@ -58,9 +58,11 @@ sendRequest.addEventListener('submit',async(e)=>{
             i=`
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
-                <b>A: ${parseRes.msg}</b>
+                <b>A: ${parseRes.msg}</b><br/>
+                ${parseRes.body}
             </div>
             `
+            console.log(parseRes.body)
             textResponse.innerHTML+=i
             document.querySelector('.down').scrollIntoView()
         }
