@@ -15,9 +15,10 @@ closeMenu.addEventListener('click',()=>{
 })
 
 //goes to landing page
-const toLandingPage=()=>{
+const toLandingPage=document.querySelector('.logo') 
+toLandingPage.addEventListener('click',()=>{
     window.location.href='/'
-}
+})
 
 
 //sending request to openai
