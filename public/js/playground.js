@@ -20,7 +20,7 @@ toLandingPage.addEventListener('click',()=>{
     window.location.href='/'
 })
 
-
+ 
 //sending request to openai
 let req='';
 const sendRequest=document.querySelector('.handle-submit');
@@ -55,11 +55,19 @@ sendRequest.addEventListener('submit',async(e)=>{
                 textResponse.innerHTML=``
             },1500)
         }else{
+            let data=parseRes.body
             i=`
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
                 <b>A: ${parseRes.msg}</b><br/>
-                ${parseRes.body}
+                ${data.organic.map(item=>(
+                    `
+                    <div>
+                        <p>${item.title}</p><br/>
+                        <p>${item.snippet}</p>
+                    </div>
+                    `
+                ))}
             </div>
             `
             console.log(parseRes.body)
@@ -70,7 +78,7 @@ sendRequest.addEventListener('submit',async(e)=>{
         sendRequest.reset()
         // display error message
         const textResponse=document.querySelector('.text-response');
-        i=`
+        let i=`
         <div class='text-error'>
             <p style="color:red;">Error: ${error.message}</p>
         </div>
