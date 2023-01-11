@@ -61,7 +61,45 @@ sendRequest.addEventListener('submit',async(e)=>{
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
                 <b>A: ${parseRes.msg}</b><br/>
-                ${data.organic}
+                ${data.organic.map(item=>(
+                    `
+                    <div key=${item.position}>
+                        <p>${item.title}</p>
+                        <p>${item.snippet}</p>
+                        <a href=${item.link} target='_blank' rel='noreferrer'>View more...</a><br/>
+                        <div style='display:flex;'>
+                        ${item.sitelinks&&item.sitelinks.map(res=>(
+                            `
+                            <div key=${res.title}>
+                                <a href=${res.link} target='_blank' rel='noreferrer'>${res.title.slice(0,8)}.. </a>
+                            </div>
+                            `
+                        ))}
+                        </div>
+                        <br/>
+                    </div>
+                    `
+                ))}
+                <h2>People Also Ask</h2>
+                ${data.peopleAlsoAsk.map(res=>(
+                    `
+                    <div>
+                        <p>${res.question}</p>
+                        <p>${res.snippet}</p>
+                        <a href=${res.link} target='_blank' rel='noreferrer'>${res.title.slice(0,10)}</a>
+                        <br/>
+                    </div>
+                    `
+                ))}
+                <br/><h2>Related Searches</h2>
+                ${data.relatedSearches.map(res=>(
+                    `
+                    <div>
+                        <p>${res.query}</p>
+                        <br/>
+                    </div>
+                    `
+                ))}
             </div>
             `
             textResponse.innerHTML+=i
