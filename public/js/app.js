@@ -1,4 +1,4 @@
-
+//get diagnosed button
 const getDiagnosed=document.querySelector('#get-diagnosed');
 getDiagnosed.addEventListener('click',()=>{
     window.location.href='/laboratory'
@@ -93,6 +93,7 @@ questions.map(tag=>{
 
 
 //get chacked form
+document.querySelector('.form-btn').innerText='Get Checked';
 const getCheckedForm=document.querySelector('.form-get-checked');
 getCheckedForm.addEventListener('submit',async(e)=>{
     e.preventDefault();
@@ -101,6 +102,8 @@ getCheckedForm.addEventListener('submit',async(e)=>{
     const objectiveAnswer=document.querySelector('.objective-answer');
     const objectiveContentAnswer=document.querySelector('.objective-content-answer');
     try {
+        document.querySelector('.form-btn').disabled=true;
+        document.querySelector('.form-btn').innerHTML="<i>Submitting...</i>";
         const url='/api'
         const response=await fetch(url,{
             method:'POST',
@@ -111,7 +114,9 @@ getCheckedForm.addEventListener('submit',async(e)=>{
                 prompt:getCheckedForm.getChecked.value
             })
         })
-        const parseRes=await response.json()
+        document.querySelector('.form-btn').innerText='Get Checked';
+        document.querySelector('.form-btn').disabled=false;
+        const parseRes=await response.json();
         if(parseRes.error){
         objective.style.display='block'
         objectiveContent.innerHTML=`
@@ -124,7 +129,7 @@ getCheckedForm.addEventListener('submit',async(e)=>{
             objective.style.display='none'
         },7000)
         }else{
-            let data=JSON.parse(parseRes.ans.body);
+            let data=JSON.parse(parseRes.ans);
             objectiveAnswer.style.display='block'
             objectiveContentAnswer.innerHTML=`
             <div class='text'>
@@ -144,6 +149,8 @@ getCheckedForm.addEventListener('submit',async(e)=>{
         }
 
     } catch (error) {
+        document.querySelector('.form-btn').innerText='Get Checked';
+        document.querySelector('.form-btn').disabled=false;
         objective.style.display='block'
         objectiveContent.innerHTML=`
         <b>
@@ -209,3 +216,4 @@ setTimeout(()=>{
     objective.style.display='none'
     objectiveAnswer.style.display='none'
 },300000)
+

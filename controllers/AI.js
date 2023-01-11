@@ -39,7 +39,7 @@ const Ask=async(req,res)=>{
             }else{
                 res.status(200).send({
                     msg:output,
-                    ans:response
+                    ans:response.body
                 });
             }
         });

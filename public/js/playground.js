@@ -22,12 +22,16 @@ toLandingPage.addEventListener('click',()=>{
 
  
 //sending request to api
+const playgroundSubmitBtn=document.querySelector('.playground-submit-btn');
+playgroundSubmitBtn.innerHTML='<i class="fa fa-send"></i>'
 let req='';
 const sendRequest=document.querySelector('.handle-submit');
 sendRequest.addEventListener('submit',async(e)=>{
     const request=sendRequest.request.value
     e.preventDefault();
     try {
+        playgroundSubmitBtn.innerHTML='<i>Submitting..</i>';
+        playgroundSubmitBtn.disabled=true;
         const url='/api';
         const response=await fetch(url,{
             method:'POST',
@@ -38,6 +42,8 @@ sendRequest.addEventListener('submit',async(e)=>{
                 prompt:request
             })
         })
+        playgroundSubmitBtn.innerHTML='<i class="fa fa-send"></i>';
+        playgroundSubmitBtn.disabled=false;
         sendRequest.reset()
         const parseRes=await response.json();
         let i=``
@@ -55,7 +61,7 @@ sendRequest.addEventListener('submit',async(e)=>{
                 textResponse.innerHTML=``
             },1500)
         }else{
-            let data=JSON.parse(parseRes.ans.body);
+            let data=JSON.parse(parseRes.ans);
             i=`
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
@@ -96,12 +102,14 @@ sendRequest.addEventListener('submit',async(e)=>{
             document.querySelector('.down').scrollIntoView()
         }
     } catch (error) {
-        sendRequest.reset()
+        sendRequest.reset();
+        playgroundSubmitBtn.innerHTML='<i class="fa fa-send"></i>';
+        playgroundSubmitBtn.disabled=false;
         // display error message
         const textResponse=document.querySelector('.text-response');
         let i=`
         <div class='text-error'>
-            <p style="color:red;">Error: ${error.message}</p>
+            <p style="color:red;">Error: No Internet</p>
         </div>
         `
         textResponse.innerHTML=i
