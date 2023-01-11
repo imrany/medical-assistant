@@ -98,6 +98,8 @@ getCheckedForm.addEventListener('submit',async(e)=>{
     e.preventDefault();
     const objective=document.querySelector('.objective');
     const objectiveContent=document.querySelector('.objective-content');
+    const objectiveAnswer=document.querySelector('.objective-answer');
+    const objectiveContentAnswer=document.querySelector('.objective-content-answer');
     try {
         const url='/api'
         const response=await fetch(url,{
@@ -123,8 +125,8 @@ getCheckedForm.addEventListener('submit',async(e)=>{
         },7000)
         }else{
             let data=JSON.parse(parseRes.ans.body);
-            objective.style.display='block'
-            objectiveContent.innerHTML=`
+            objectiveAnswer.style.display='block'
+            objectiveContentAnswer.innerHTML=`
             <div class='text'>
             <span style="color: green;">Results for ${getCheckedForm.getChecked.value}</span><br/>
                 ${data.organic.map(item=>(
@@ -163,8 +165,10 @@ floatWhatsapp.addEventListener('click',()=>{
 
 //open objective tab
 const objective=document.querySelector('.objective');
+const objectiveAnswer=document.querySelector('.objective-answer');
 const objectiveContent=document.querySelector('.objective-content');
 const openObjective=document.querySelector('.open-objective');
+const closeObjectiveAnswer=document.querySelector('.close-objective-answer');
 openObjective.addEventListener('click',()=>{
     objective.style.display='block'
     objectiveContent.innerHTML=`
@@ -196,7 +200,12 @@ openObjective2.addEventListener('click',()=>{
 objective.addEventListener('click',()=>{
     objective.style.display='none'
 })
+//close objectiveAnswer tab
+closeObjectiveAnswer.addEventListener('click',()=>{
+    objectiveAnswer.style.display='none'
+})
 //close objective tab after 5min
 setTimeout(()=>{
     objective.style.display='none'
+    objectiveAnswer.style.display='none'
 },300000)

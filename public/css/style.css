@@ -213,7 +213,20 @@ article{
 }
 .objective{
     position: fixed;
-    top: 200px;
+    top: 15%;
+    z-index: 20px;
+    width: 40vw;
+    background: var(--gray);
+    padding: 10px 15px;
+    border-radius: 20px;
+    line-height: 25px;
+    box-shadow: 0 5px 20px 0 rgb(11 7 110 / 30%);
+}
+.objective-answer{
+    position: fixed;
+    top: 15%;
+    bottom: 5%;
+    overflow-y: scroll;
     z-index: 20px;
     width: 40vw;
     background: var(--gray);
@@ -223,6 +236,11 @@ article{
     box-shadow: 0 5px 20px 0 rgb(11 7 110 / 30%);
 }
 .objective i{
+    cursor: pointer;
+    font-size: larger;
+    padding: 3px 15px 0 0;
+}
+.objective-answer i{
     cursor: pointer;
     font-size: larger;
     padding: 3px 15px 0 0;
