@@ -1,25 +1,8 @@
 <nav>
-    <div class="logo" title="Landing page">
-        <img src="/assests/logo.jpg"/> 
+    <div class="logo">
         <div class="text">
-            Stay Healthy
+            Health Assistant
         </div>
     </div>
-    <ul role="navigation">
-        <%paths.map(path=>{%>
-            <li key="<%= path.name%>"><a href="<%= path.url%>" title="<%= path.title%>"><%= path.name%></a></li>
-        <%})%>
-    </ul>
-    <button id="<%= button.id%>"><%= button.name%></button>
-    <i class="fa fa-list menu"></i>
-    
 </nav>
-<div class="menu-list-bg">
-    <div class="menu-list">
-        <ul role="navigation">
-            <%paths.map(path=>{%>
-                <li key="<%= path.name%>"><a href="<%= path.url%>" title="<%= path.title%>"><%= path.name%></a></li>
-            <%})%>
-        </ul> 
-    </div>
-</div>
+ 
