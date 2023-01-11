@@ -21,7 +21,7 @@ toLandingPage.addEventListener('click',()=>{
 })
 
  
-//sending request to openai
+//sending request to api
 let req='';
 const sendRequest=document.querySelector('.handle-submit');
 sendRequest.addEventListener('submit',async(e)=>{
@@ -56,7 +56,6 @@ sendRequest.addEventListener('submit',async(e)=>{
             },1500)
         }else{
             let data=JSON.parse(parseRes.ans.body);
-            console.log(data)
             i=`
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>

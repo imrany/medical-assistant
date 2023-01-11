@@ -99,24 +99,48 @@ getCheckedForm.addEventListener('submit',async(e)=>{
     const objective=document.querySelector('.objective');
     const objectiveContent=document.querySelector('.objective-content');
     try {
-        const url=''
+        const url='/api'
         const response=await fetch(url,{
             method:'POST',
             headers:{
                 "content-type":'application/json'
             },
             body:JSON.stringify({
-                request:getCheckedForm.getChecked.value
+                prompt:getCheckedForm.getChecked.value
             })
         })
         const parseRes=await response.json()
+        if(parseRes.error){
         objective.style.display='block'
         objectiveContent.innerHTML=`
-        <b>
+            <div class='text-error'>
+                <p style="color:red;">Error: ${parseRes.msg}</p>
+            </div>
+            `
+        //close objective tab after 7sec
+        setTimeout(()=>{
+            objective.style.display='none'
+        },7000)
+        }else{
+            let data=JSON.parse(parseRes.ans.body);
+            objective.style.display='block'
+            objectiveContent.innerHTML=`
+            <div class='text'>
             <span style="color: green;">Results for ${getCheckedForm.getChecked.value}</span><br/>
-            <p>${parseRes}</p>
-        </b>
-        `
+                ${data.organic.map(item=>(
+                    `
+                    <div key=${item.position}>
+                        <p>${item.title}</p>
+                        <p>${item.snippet}</p>
+                        <a href=${item.link} target='_blank' rel='noreferrer'>View more...</a><br/>
+                        <br/>
+                    </div>
+                    `
+                ))}
+            </div>
+            `
+        }
+
     } catch (error) {
         objective.style.display='block'
         objectiveContent.innerHTML=`
