@@ -58,7 +58,7 @@ tags.map(tag=>{
     i=`
     <div class="column" key=${tag.id}>
         <div class="tag">
-            <i class="fa fa-close"></i> ${tag.tag[0]}
+           ${tag.tag[0]}
         </div>
         <div class="tag">
             ${tag.tag[1]}
@@ -97,7 +97,18 @@ const getCheckedForm=document.querySelector('.form-get-checked');
 getCheckedForm.addEventListener('submit',async(e)=>{
     e.preventDefault();
     try {
-
+        const url=''
+        const response=await fetch(url,{
+            method:'POST',
+            headers:{
+                "content-type":'application/json'
+            },
+            body:JSON.stringify({
+                request:getCheckedForm.getChecked.value
+            })
+        })
+        const parseRes=await response.json();
+        console.log(parseRes)
     } catch (error) {
         
     }
@@ -144,3 +155,7 @@ openObjective2.addEventListener('click',()=>{
 objective.addEventListener('click',()=>{
     objective.style.display='none'
 })
+//close objective tab after 2min
+setTimeout(()=>{
+    objective.style.display='none'
+},120000)
