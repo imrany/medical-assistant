@@ -96,6 +96,8 @@ questions.map(tag=>{
 const getCheckedForm=document.querySelector('.form-get-checked');
 getCheckedForm.addEventListener('submit',async(e)=>{
     e.preventDefault();
+    const objective=document.querySelector('.objective');
+    const objectiveContent=document.querySelector('.objective-content');
     try {
         const url=''
         const response=await fetch(url,{
@@ -107,10 +109,25 @@ getCheckedForm.addEventListener('submit',async(e)=>{
                 request:getCheckedForm.getChecked.value
             })
         })
-        const parseRes=await response.json();
-        console.log(parseRes)
+        const parseRes=await response.json()
+        objective.style.display='block'
+        objectiveContent.innerHTML=`
+        <b>
+            <span style="color: green;">Results for ${getCheckedForm.getChecked.value}</span><br/>
+            <p>${parseRes}</p>
+        </b>
+        `
     } catch (error) {
-        
+        objective.style.display='block'
+        objectiveContent.innerHTML=`
+        <b>
+            <span style="color: red;">No Internet</span>
+        </b>
+        `
+        //close objective tab after 7sec
+        setTimeout(()=>{
+            objective.style.display='none'
+        },7000)
     }
 })
 
@@ -155,7 +172,7 @@ openObjective2.addEventListener('click',()=>{
 objective.addEventListener('click',()=>{
     objective.style.display='none'
 })
-//close objective tab after 2min
+//close objective tab after 5min
 setTimeout(()=>{
     objective.style.display='none'
-},120000)
+},300000)

@@ -55,22 +55,15 @@ sendRequest.addEventListener('submit',async(e)=>{
                 textResponse.innerHTML=``
             },1500)
         }else{
-            let data=parseRes.body
+            let data=JSON.parse(parseRes.ans.body);
+            console.log(data)
             i=`
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
                 <b>A: ${parseRes.msg}</b><br/>
-                ${data.organic.map(item=>(
-                    `
-                    <div>
-                        <p>${item.title}</p><br/>
-                        <p>${item.snippet}</p>
-                    </div>
-                    `
-                ))}
+                ${data.organic}
             </div>
             `
-            console.log(parseRes.body)
             textResponse.innerHTML+=i
             document.querySelector('.down').scrollIntoView()
         }
