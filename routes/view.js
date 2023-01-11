@@ -19,7 +19,7 @@ views.get('/',(req,res)=>{
     ]})
 });
 views.get('/laboratory',(req,res)=>{
-    res.render('playground',{title:'Laboratory',js:'js/playground.js',button:{name:'Get Results',id:'get-results'},paths:[
+    res.render('playground',{title:'Laboratory',js:'js/playground.js',button:{name:'Get Diagnosed',id:'get-diagnosed'},paths:[
         {
             id:1,
             name:'Home',
@@ -35,7 +35,7 @@ views.get('/laboratory',(req,res)=>{
     ]})
 });
 views.get('/facilities',(req,res)=>{
-    res.render('facilities',{title:'Facilities',js:'js/facilities.js',button:{name:'Get Results',id:'get-results'},paths:[
+    res.render('facilities',{title:'Facilities',js:'js/facilities.js',button:{name:'Get Diagnosed',id:'get-diagnosed'},paths:[
         {
             id:1,
             name:'Home',

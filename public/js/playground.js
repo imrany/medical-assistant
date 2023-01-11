@@ -1,6 +1,6 @@
-const getResults=document.querySelector('#get-results');
-getResults.addEventListener('click',()=>{
-    window.location.href='/results'
+const getDiagnosed=document.querySelector('#get-diagnosed');
+getDiagnosed.addEventListener('click',()=>{
+    window.location.href='/laboratory'
 });
 
 //opens menu list
