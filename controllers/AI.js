@@ -26,7 +26,7 @@ const Ask=async(req,res)=>{
                 'Content-Type': 'application/json'
               },
             body: JSON.stringify({
-                "q": output,
+                "q": prompt,
                 "gl": "us",
                 "hl": "en",
                 "autocorrect": true

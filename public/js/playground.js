@@ -60,7 +60,7 @@ sendRequest.addEventListener('submit',async(e)=>{
             i=`
             <div class='text' title="${req} 's response">
                 <h2>Q: ${req}</h2>
-                <b>A: ${parseRes.msg}</b><br/>
+                <b>A: ${parseRes.msg} <i>&larr; ML response not that accurate</i></b><br/>
                 ${data.organic.map(item=>(
                     `
                     <div key=${item.position}>
