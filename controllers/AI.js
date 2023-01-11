@@ -3,7 +3,6 @@ const data=require('../db/data.json');
 const request = require('request');
 const network= new brain.recurrent.LSTM();
 const fs = require('fs');
-require('dotenv').config();
 
 const trainingData=data.map(item=>({
     input: item.signs,
@@ -23,7 +22,7 @@ const Ask=async(req,res)=>{
               'method': 'POST',
               'url': 'https://google.serper.dev/search',
               'headers': {
-                'X-API-KEY': process.env.SEARCH_API_KEY,
+                'X-API-KEY': '15afe59cd3f32c28b37219ee2d073b7348626de7',
                 'Content-Type': 'application/json'
               },
             body: JSON.stringify({

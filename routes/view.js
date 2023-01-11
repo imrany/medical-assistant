@@ -15,19 +15,7 @@ views.get('/',(req,res)=>{
             name:'Facilities',
             url:'/facilities',
             title:"Local Facilities around you"
-        },
-        {
-            id:3,
-            name:'Reviews',
-            url:'/reviews',
-            title:"Reviews"
-        },
-        {
-            id:4,
-            name:'Blog',
-            url:'/blogs',
-            title:"Health Blogs"
-        },
+        }
     ]})
 });
 views.get('/laboratory',(req,res)=>{
@@ -43,24 +31,6 @@ views.get('/laboratory',(req,res)=>{
             name:'Facilities',
             url:'/facilities',
             title:"Local Facilities around you"
-        },
-        {
-            id:3,
-            name:'Reviews',
-            url:'/reviews',
-            title:"Reviews"
-        },
-        {
-            id:4,
-            name:'Get Help',
-            url:'#',
-            title:"Get Help"
-        },
-        {
-            id:5,
-            name:'Blog',
-            url:'/blogs',
-            title:"Health Blogs"
         }
     ]})
 });
@@ -77,24 +47,6 @@ views.get('/facilities',(req,res)=>{
             name:'Laboratory',
             url:'/laboratory',
             title:"Get Diagnosed"
-        },
-        {
-            id:3,
-            name:'Reviews',
-            url:'/reviews',
-            title:"Reviews"
-        },
-        {
-            id:4,
-            name:'Get Help',
-            url:'#',
-            title:"Get Help"
-        },
-        {
-            id:5,
-            name:'Blog',
-            url:'/blogs',
-            title:"Health Blogs"
         }
     ]})
 });
@@ -116,19 +68,7 @@ views.use((req,res)=>{
             name:'Facilities',
             url:'/facilities',
             title:"Local Facilities around you"
-        },
-        {
-            id:3,
-            name:'Reviews',
-            url:'/reviews',
-            title:"Reviews"
-        },
-        {
-            id:4,
-            name:'Blog',
-            url:'/blogs',
-            title:"Health Blogs"
-        },
+        }
     ]})
 })
 

@@ -91,15 +91,6 @@ sendRequest.addEventListener('submit',async(e)=>{
                     </div>
                     `
                 ))}
-                <br/><h2>Related Searches</h2>
-                ${data.relatedSearches.map(res=>(
-                    `
-                    <div>
-                        <p>${res.query}</p>
-                        <br/>
-                    </div>
-                    `
-                ))}
             </div>
             `
             textResponse.innerHTML+=i
