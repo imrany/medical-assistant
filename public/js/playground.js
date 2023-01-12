@@ -1,15 +1,15 @@
 const startInfo=[
     {
         id:1,
-        name:"Get Fast Medical Advise"
+        name:"How do you feel?"
     },
     {
         id:2,
-        name:"Get Fast Treatment"
+        name:"Get Fast Medical Advise and Treatment"
     },
     {
         id:3,
-        name:"Get Connected"
+        name:"Get Results"
     }
 ]
 const startInfoSection=document.querySelector(".start-info");
@@ -78,8 +78,7 @@ sendRequest.addEventListener('submit',async(e)=>{
                 textResponse.innerHTML=``
             },1500)
         }else{
-            // let data=JSON.parse(parseRes.ans);
-            let data=parseRes.ans;
+            let data=JSON.parse(parseRes.ans);
             i=`
             <p class="req"> ${req}  <small> <i>AI's response: "${parseRes.msg}"</i></small></p>
             <div class='text' title="${req} 's response">
@@ -98,17 +97,6 @@ sendRequest.addEventListener('submit',async(e)=>{
                             `
                         ))}
                         </div>
-                        <br/>
-                    </div>
-                    `
-                ))}
-                <h2>People Also Ask</h2>
-                ${data.peopleAlsoAsk.map(res=>(
-                    `
-                    <div>
-                        <p>${res.question}</p>
-                        <p>${res.snippet}</p>
-                        <a href=${res.link} target='_blank' rel='noreferrer'>${res.title.slice(0,10)}</a>
                         <br/>
                     </div>
                     `
