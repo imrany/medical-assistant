@@ -57,6 +57,11 @@ body{
     background: rgba(52,53,65,1);
     border: none;
 }
+.checked{
+    box-shadow: 0 5px 20px 0 rgb(11 7 110 / 10%);
+    background: rgba(52,53,65,1);
+    border: none;
+}
 .playground .side-menu ul li a{
     text-decoration: none;
     color: var(--white);
@@ -67,6 +72,18 @@ body{
     bottom: 0;
     left: 0;
     right: 80%;
+}
+.start-info{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.start-info .tab{
+    background: rgba(68,70,84,1);
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 .text-window{
     overflow-y: scroll;
@@ -79,6 +96,7 @@ body{
     right: 10vw;
     padding: 20px;
     display: flex;
+    opacity: 0;
 }
 .text-window form input{
     width: 80vw;

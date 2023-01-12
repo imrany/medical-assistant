@@ -1,6 +1,36 @@
+const startInfo=[
+    {
+        id:1,
+        name:"Get Fast Medical Advise"
+    },
+    {
+        id:2,
+        name:"Get Fast Treatment"
+    },
+    {
+        id:3,
+        name:"Get Connected"
+    }
+]
+const startInfoSection=document.querySelector(".start-info");
+for(let i=0;i<startInfo.length;i++){
+        let info=`
+        <div class="tab">
+            <p>${startInfo[i].name}.</p>
+        </div>
+        `
 
+        startInfoSection.innerHTML+= info
+}
 //first text
 document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
+
+//new checkup
+document.querySelector('.new-check-up').addEventListener('click',()=>{
+    startInfoSection.innerHTML=''
+    document.querySelector('.new-check-up').classList.add('checked')
+    document.querySelector('.handle-submit').style.opacity="1";
+});
 
 //clear screen
 document.querySelector('.clear-screen').addEventListener('click',()=>{
