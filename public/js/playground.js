@@ -1,26 +1,12 @@
-const getDiagnosed=document.querySelector('#get-diagnosed');
-getDiagnosed.addEventListener('click',()=>{
-    window.location.href='/laboratory'
-});
 
-//opens menu list
-const openMenu=document.querySelector('.menu');
-openMenu.addEventListener('click',()=>{
-    document.querySelector('.menu-list-bg').style.display='block'
-})
-//close menu list
-const closeMenu= document.querySelector('.menu-list-bg');
-closeMenu.addEventListener('click',()=>{
-    document.querySelector('.menu-list-bg').style.display='none'
-})
+//first text
+document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
 
-//goes to landing page
-const toLandingPage=document.querySelector('.logo') 
-toLandingPage.addEventListener('click',()=>{
-    window.location.href='/'
+//clear screen
+document.querySelector('.clear-screen').addEventListener('click',()=>{
+    document.querySelector('.text-response').innerHTML=''
+    document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
 })
-
- 
 //sending request to api
 const playgroundSubmitBtn=document.querySelector('.playground-submit-btn');
 playgroundSubmitBtn.innerHTML='<i class="fa fa-send"></i>'
@@ -30,7 +16,8 @@ sendRequest.addEventListener('submit',async(e)=>{
     const request=sendRequest.request.value
     e.preventDefault();
     try {
-        playgroundSubmitBtn.innerHTML='<i>Submitting..</i>';
+        document.querySelector('.small-first-text').innerText=''
+        playgroundSubmitBtn.innerHTML='<i class="fa fa-planet"></i>';
         playgroundSubmitBtn.disabled=true;
         const url='/api';
         const response=await fetch(url,{
@@ -61,11 +48,11 @@ sendRequest.addEventListener('submit',async(e)=>{
                 textResponse.innerHTML=``
             },1500)
         }else{
-            let data=JSON.parse(parseRes.ans);
+            // let data=JSON.parse(parseRes.ans);
+            let data=parseRes.ans;
             i=`
+            <p class="req"> ${req}  <small> <i>AI's response: "${parseRes.msg}"</i></small></p>
             <div class='text' title="${req} 's response">
-                <h2>Q: ${req}</h2>
-                <b>A: ${parseRes.msg} <i>&larr; ML response not that accurate</i></b><br/>
                 ${data.organic.map(item=>(
                     `
                     <div key=${item.position}>
@@ -96,12 +83,14 @@ sendRequest.addEventListener('submit',async(e)=>{
                     </div>
                     `
                 ))}
+                <div class="down"></div>
             </div>
             `
             textResponse.innerHTML+=i
             document.querySelector('.down').scrollIntoView()
         }
     } catch (error) {
+        document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
         sendRequest.reset();
         playgroundSubmitBtn.innerHTML='<i class="fa fa-send"></i>';
         playgroundSubmitBtn.disabled=false;

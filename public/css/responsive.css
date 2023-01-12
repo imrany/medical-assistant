@@ -1,82 +1,40 @@
 @media screen and (max-width:1000px) {
-    .grey-section .tag-section{
+    .playground{
         display: grid;
-        grid-template-columns: repeat(4,1fr);
-    }  
-    .get-started{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(1,1fr);
     }
-    .get-started article{
-        width: 90vw;
-    }
-    .get-started .form-get-checked input{
-        width: 80vw;
-    }
-    .get-started .form-btn{
-       font-size: 12px;
-       width: 25vw;
-    }
-    .frequent-section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .frequent-section article{
-        margin: 10px 0;
-    }
-    .frequent-section img{
-        width: 60vw;
-        height: 250px;
-    }
-    footer .info{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 20px;
-    }
-    footer .info .container{
-        justify-self: center;
-    }
-    .objective{
-        width: 80vw;
-    }
-    iframe{
-        width: 90vw; 
-        height: 70vh;
-    }
-}
-@media screen and (max-width:800px) {
-    nav ul,nav button{
+    .playground .side-menu{
         display: none;
     }
-    nav .menu{
-        display: block;
+    .text-window{
+        width: 100vw;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .grey-section .tag-section{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-    }
-    .grey-section .tag-question{
+    .text-window form{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
         display: flex;
     }
-    .location-notify{
+    .text-response {
         width: 80vw;
+    }
+    .small-first-text{
+        display: none;
     }
 }
 @media screen and (max-width:600px) {
-    .grey-section .tag-section{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        font-size: small;
+    .text-window{
+        display: block;
+        padding: 40px 20px;
     }
-    .frequent-section img{
+    .text-response .text{
         width: 80vw;
-        height: 250px;
-    }
-    footer .info{
-        display: flex;
-        flex-direction: column;
     }
     .text-window form{
         padding: 10px;
@@ -85,12 +43,4 @@
         margin-left: 10px;
         padding: 10px 20px;
     }
-}
-@media screen and (max-width:310px) {
-    .grey-section .tag-section{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }   
 }

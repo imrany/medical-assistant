@@ -1,18 +1,22 @@
 <html lang="en">
 <%- include('./partials/head.ejs')%>
 <body>
-    <%- include('./partials/nav.ejs')%>
     <div class="playground">
-        <div class="side-menu">
+        <div class="side-menu"> 
             <ul>
-                <li><a href="#2"><i class="fa fa-user"></i> New Check up</a></li>
+                <li class="new-check-up"><a href="#2"><span class="add">+</span>  New Check up</a></li>
             </ul>
+            <div class="info">
+                <ul>
+                    <li class="clear-screen"><i class="fa fa-trash add"></i> Clear screen</li>
+                </ul>
+            </div>
         </div>
         <div class="text-window">
+            <small class="small-first-text"></small>
             <div class="text-response"></div>
-            <div class="down"></div>
             <form class="handle-submit">
-                <textarea class="playground-textarea" name='request' placeholder="headache,stomachache, difficult breathing" required></textarea>
+                <input class="playground-textarea" name='request' placeholder="headache,stomachache, difficult breathing" required/>
                 <button class="playground-submit-btn"></button>
             </form>
         </div>
