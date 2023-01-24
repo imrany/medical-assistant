@@ -23,19 +23,18 @@ for(let i=0;i<startInfo.length;i++){
         startInfoSection.innerHTML+= info
 }
 //first text
-document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.';
-
-// const goal='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
-// var curr=0;
-// function write(){
-//     const text=document.querySelector('.small-first-text');
-//     text.textContent+=goal.charAt(curr);
-//     curr++;
-//     if(curr<goal.length){
-//         setTimeout(write,50)
-//     }
-// }
-// write();
+// document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.';
+const goal='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
+var curr=0;
+function write(){
+    const text=document.querySelector('.small-first-text');
+    text.textContent+=goal.charAt(curr);
+    curr++;
+    if(curr<goal.length){
+        setTimeout(write,50)
+    }
+}
+write();
 
 //new checkup
 document.querySelector('.new-check-up').addEventListener('click',()=>{
@@ -88,7 +87,7 @@ sendRequest.addEventListener('submit',async(e)=>{
             textResponse.innerHTML+=i
             setTimeout(()=>{
                 textResponse.innerHTML=``
-            },1500)
+            },8000)
         }else{
             let data=JSON.parse(parseRes.ans);
             i=`
@@ -101,10 +100,10 @@ sendRequest.addEventListener('submit',async(e)=>{
                         <p>${item.snippet}</p>
                         <a href=${item.link} target='_blank' rel='noreferrer'>View more...</a><br/>
                         <br/>
+                        <div class="down"></div>
                     </div>
                     `
                 ))}
-                <div class="down"></div>
             </div>
             `
             textResponse.innerHTML+=i
@@ -126,6 +125,6 @@ sendRequest.addEventListener('submit',async(e)=>{
         textResponse.innerHTML=i
         setTimeout(()=>{
             textResponse.innerHTML=``
-        },1500)
+        },8000)
     }
 })
