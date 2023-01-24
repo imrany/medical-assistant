@@ -106,6 +106,15 @@ sendRequest.addEventListener('submit',async(e)=>{
                 ))}
             </div>
             `
+//             var curr=0;
+// function write(){
+//     textResponse.innerHTML+=i.charAt(curr);
+//     curr++;
+//     if(curr<i.length){
+//         setTimeout(write,50)
+//     }
+// }
+// write();
             textResponse.innerHTML+=i
             document.querySelector('.down').scrollIntoView()
         }
