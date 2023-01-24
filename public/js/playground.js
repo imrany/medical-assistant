@@ -22,8 +22,8 @@ for(let i=0;i<startInfo.length;i++){
 
         startInfoSection.innerHTML+= info
 }
-//first text "goal"
-document.querySelector('.text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.';
+//first text
+document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.';
 
 // const goal='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
 // var curr=0;
@@ -59,7 +59,7 @@ sendRequest.addEventListener('submit',async(e)=>{
     e.preventDefault();
     try {
         document.querySelector('.small-first-text').innerText=''
-        playgroundSubmitBtn.innerHTML='<i class="fa fa-planet"></i>';
+        playgroundSubmitBtn.innerHTML='<i class="fa fa-rocket"></i>';
         playgroundSubmitBtn.disabled=true;
         const url='/api';
         const response=await fetch(url,{
@@ -100,15 +100,6 @@ sendRequest.addEventListener('submit',async(e)=>{
                         <p>${item.title}</p>
                         <p>${item.snippet}</p>
                         <a href=${item.link} target='_blank' rel='noreferrer'>View more...</a><br/>
-                        <div style='display:flex;'>
-                        ${item.sitelinks&&item.sitelinks.map(res=>(
-                            `
-                            <div key=${res.title}>
-                                <a href=${res.link} target='_blank' rel='noreferrer'>${res.title.slice(0,8)}.. </a>
-                            </div>
-                            `
-                        ))}
-                        </div>
                         <br/>
                     </div>
                     `
@@ -120,6 +111,7 @@ sendRequest.addEventListener('submit',async(e)=>{
             document.querySelector('.down').scrollIntoView()
         }
     } catch (error) {
+        console.log(error.message)
         document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
         sendRequest.reset();
         playgroundSubmitBtn.innerHTML='<i class="fa fa-send"></i>';
