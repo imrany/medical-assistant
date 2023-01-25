@@ -89,34 +89,62 @@ sendRequest.addEventListener('submit',async(e)=>{
                 textResponse.innerHTML=``
             },8000)
         }else{
-            let data=JSON.parse(parseRes.ans);
-            i=`
-            <p class="req"> ${req}  <small> <i>AI's response: "${parseRes.msg}"</i></small></p>
-            <div class='text' title="${req} 's response">
-                ${data.organic.map(item=>(
-                    `
-                    <div key=${item.position}>
-                        <p>${item.title}</p>
-                        <p>${item.snippet}</p>
-                        <a href=${item.link} target='_blank' rel='noreferrer'>View more...</a><br/>
+            // let data=JSON.parse(parseRes.ans);
+            let data=parseRes.ans;
+            const textRes=document.querySelector('.text-res');
+            let $i='';
+             $i=`
+            ${data.organic[0].title}
+            ${data.organic[0].snippet}
+            ${data.organic[0].link}\r\n
+
+            ${data.organic[1].title}
+            ${data.organic[1].snippet}
+            ${data.organic[1].link}\r\n
+
+            ${data.organic[2].title}
+            ${data.organic[2].snippet}
+            ${data.organic[2].link}\r\n
+            `
+            var curr=0;
+            function write(){
+                textRes.textContent+=$i.charAt(curr);
+                curr++;
+                if(curr<$i.length){
+                    setTimeout(write,50)
+                }
+            }
+            write();
+
+            i= (
+                <>
+                    <p class="req"> ${req}  <small> <i>AI's response: "${parseRes.msg}"</i></small></p>
+                    <div class='text' title="${req} 's response">
+                        <div class="text-res"></div>
                         <br/>
                         <div class="down"></div>
                     </div>
-                    `
-                ))}
-            </div>
-            `
-//             var curr=0;
-// function write(){
-//     textResponse.innerHTML+=i.charAt(curr);
-//     curr++;
-//     if(curr<i.length){
-//         setTimeout(write,50)
-//     }
-// }
-// write();
+                </>
+            )
+
+            // i=`
+            // <p class="req"> ${req}  <small> <i>AI's response: "${parseRes.msg}"</i></small></p>
+            // <div class='text' title="${req} 's response">
+            //     ${data.organic.map(item=>(
+            //         `
+            //         <div key=${item.position}>
+            //             <p>${item.title}</p>
+            //             <p>${item.snippet}</p>
+            //             <a href=${item.link} target='_blank' rel='noreferrer'>View more...</a><br/>
+            //             <br/>
+            //         </div>
+            //         `
+            //     ))}
+            //     <div class="down"></div>
+            // </div>
+            // `
             textResponse.innerHTML+=i
-            document.querySelector('.down').scrollIntoView()
+            // document.querySelector('.down').scrollIntoView()
         }
     } catch (error) {
         console.log(error.message)
