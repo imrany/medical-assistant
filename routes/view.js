@@ -3,7 +3,7 @@ views=express.Router();
 
 //view routes
 views.get('/',(req,res)=>{
-    res.render('playground',{title:'Playground',js:'js/playground.js'})
+    res.render('playground',{title:'AI',js:'js/playground.js'})
 });
  
 //api routes

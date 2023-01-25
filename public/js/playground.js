@@ -1,22 +1,25 @@
 const startInfo=[
     {
         id:1,
-        name:"How do you feel?"
+        icon:`<i class="fa fa-bolt" style="margin-right:5px;"></i>`,
+        name:"Powered By Artificial Intelligence."
     },
     {
         id:2,
-        name:"Get Fast Medical Advise and Treatment"
+        icon:`<i class="fa fa-comment" style="margin-right:5px;"></i>`,
+        name:"Your Medical assistant."
     },
     {
         id:3,
-        name:"Get Results"
+        icon:`<i class="fa fa-user" style="margin-right:5px;"></i>`,
+        name:"Improve your health."
     }
 ]
 const startInfoSection=document.querySelector(".start-info");
 for(let i=0;i<startInfo.length;i++){
         let info=`
         <div class="tab">
-            <p>${startInfo[i].name}.</p>
+            <p>${startInfo[i].icon} ${startInfo[i].name}.</p>
         </div>
         `
 
@@ -24,7 +27,7 @@ for(let i=0;i<startInfo.length;i++){
 }
 //first text
 // document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.';
-const goal='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
+const goal='Our objective is ensuring healthy living and protect sick people from developing diseases. Your feedback will help our model learn.'
 var curr=0;
 function write(){
     const text=document.querySelector('.small-first-text');
@@ -46,7 +49,7 @@ document.querySelector('.new-check-up').addEventListener('click',()=>{
 //clear screen
 document.querySelector('.clear-screen').addEventListener('click',()=>{
     document.querySelector('.text-response').innerHTML=''
-    document.querySelector('.small-first-text').innerText='Our goal is ensuring healthy living and protect sick people from developing diseases. Your feedback will help us improve.'
+    document.querySelector('.small-first-text').innerText='Our objective is ensuring healthy living and protect sick people from developing diseases. Your feedback will help our model learn.'
 })
 //sending request to api
 const playgroundSubmitBtn=document.querySelector('.playground-submit-btn');
@@ -94,17 +97,30 @@ sendRequest.addEventListener('submit',async(e)=>{
             i=`
             <p class="req"> ${req}  <small> <i>AI's response: "${parseRes.msg}"</i></small></p>
             <div class='text' title="${req} 's response">
-                ${data.organic.map(item=>(
-                    `
-                    <div key=${item.position}>
-                        <p>${item.title}</p>
-                        <p>${item.snippet}</p>
-                        <a href=${item.link} target='_blank' rel='noreferrer'>View more...</a><br/>
-                        <br/>
-                    </div>
-                    `
-                ))}
-                <div class="down"></div>
+                <div key=${data.organic[0].position}>
+                    <p>${data.organic[0].title}</p>
+                    <p>${data.organic[0].snippet}</p>
+                    <a href=${data.organic[0].link} target='_blank' rel='noreferrer'>View more...</a><br/>
+                    <br/>
+                </div>
+                <div key=${data.organic[1].position}>
+                    <p>${data.organic[1].title}</p>
+                    <p>${data.organic[1].snippet}</p>
+                    <a href=${data.organic[1].link} target='_blank' rel='noreferrer'>View more...</a><br/>
+                    <br/>
+                </div>
+                <div key=${data.organic[2].position}>
+                    <p>${data.organic[2].title}</p>
+                    <p>${data.organic[2].snippet}</p>
+                    <a href=${data.organic[2].link} target='_blank' rel='noreferrer'>View more...</a><br/>
+                    <br/>
+                </div>
+                <div key=${data.organic[3].position}>
+                    <p>${data.organic[3].title}</p>
+                    <p>${data.organic[3].snippet}</p>
+                    <a href=${data.organic[3].link} target='_blank' rel='noreferrer'>View more...</a><br/>
+                    <br/>
+                </div>
             </div>
             `
             textResponse.innerHTML+=i
