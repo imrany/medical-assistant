@@ -19,8 +19,8 @@ html{
   scroll-behavior: smooth;
 }
 body{
-    background: rgba(52,53,65,1);
-    color: var(--white);
+    background: orange;
+    color: var(--black);
     font-family: 'Quicksand', monospace;
 }
 
@@ -36,7 +36,7 @@ body{
     height: 100vh;
 }
 .playground .side-menu{
-    background: var(--black);
+    background: rgb(1, 1, 49);
 }
 .playground .side-menu ul{
     padding: 40px 25px;
@@ -132,7 +132,7 @@ a{
     margin: 30px 0 -15px 0;
 }
 .text-response .req::before{
-    content: '🧠  ';
+    content: 'USER:  ';
 }
 .text-response .text{
     background: rgba(68,70,84,1);
