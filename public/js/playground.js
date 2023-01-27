@@ -144,3 +144,7 @@ sendRequest.addEventListener('submit',async(e)=>{
         },8000)
     }
 })
+
+document.querySelector('.back-home').addEventListener('click',()=>{
+    window.location.href='/'
+})
