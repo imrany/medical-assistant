@@ -92,8 +92,7 @@ sendRequest.addEventListener('submit',async(e)=>{
                 textResponse.innerHTML=``
             },8000)
         }else{
-            // let data=JSON.parse(parseRes.ans);
-            let data=parseRes.ans
+            let data=JSON.parse(parseRes.ans);
             i=`
             <p class="req"> ${req}  <small> <i>AI's response: "${parseRes.msg}"</i></small></p>
             <div class='text' title="${req} 's response">

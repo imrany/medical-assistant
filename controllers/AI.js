@@ -31,42 +31,42 @@ const Ask=async(req,res)=>{
         const checkedData=network2.run(prompt)
         if(checkedData==1){
             const output=network.run(prompt);
-            res.status(200).send({
-                msg:`${output}`,
-                ans:search
+            //google search the output
+            let options = {
+                'method': 'POST',
+                'url': 'https://google.serper.dev/search',
+                'headers': {
+                    'X-API-KEY': '15afe59cd3f32c28b37219ee2d073b7348626de7',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "q": prompt,
+                    "gl": "us",
+                    "hl": "en",
+                    "autocorrect": true
+                })
+                
+            };
+            request(options, (error, response) => {
+                if (error) {
+                    res.status(404).send({msg:"No Internet"})
+                }else{
+                    res.status(200).send({
+                        msg:output,
+                        ans:response.body
+                    });
+                }
             });
+            // res.status(200).send({
+            //     msg:`${output}`,
+            //     ans:search
+            // });
         }else{
             res.status(400).send({
                 error:"Cannot generate response!",
                 msg:'Enter a valid illness sign or symptom!',
             })
         }
-        //google search the output
-        // let options = {
-        //       'method': 'POST',
-        //       'url': 'https://google.serper.dev/search',
-        //       'headers': {
-        //         'X-API-KEY': '15afe59cd3f32c28b37219ee2d073b7348626de7',
-        //         'Content-Type': 'application/json'
-        //       },
-        //     body: JSON.stringify({
-        //         "q": prompt,
-        //         "gl": "us",
-        //         "hl": "en",
-        //         "autocorrect": true
-        //     })
-            
-        // };
-        // request(options, (error, response) => {
-        //     if (error) {
-        //         res.status(404).send({msg:"No Internet"})
-        //     }else{
-        //         res.status(200).send({
-        //             msg:output,
-        //             ans:response.body
-        //         });
-        //     }
-        // });
        
     } catch (error) {
         console.log(error.message)
