@@ -51,3 +51,9 @@
         padding: 10px 20px;
     }
 }
+
+@supports(backdrop-filter: blur(2rem)){
+    .top{
+      backdrop-filter: blur(4rem);
+    }
+  }

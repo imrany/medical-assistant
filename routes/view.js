@@ -3,6 +3,9 @@ views=express.Router();
 
 //view routes
 views.get('/',(req,res)=>{
+    res.render('index',{title:'Home',js:'js/index.js'})
+});
+views.get('/playground',(req,res)=>{
     res.render('playground',{title:'AI',js:'js/playground.js'})
 });
  

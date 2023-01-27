@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Rubik+Glitch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Moon+Dance:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&display=swap');
 *{
   padding: 0;
   margin: 0;
@@ -22,6 +22,99 @@ body{
     background: rgba(68,70,84,1);
     color: var(--white);
     font-family: 'Quicksand', monospace;
+}
+
+.index{
+    color: var(--white);
+    font-family: 'Inconsolata';
+    background: var(--black);
+}
+ .hero-image{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url('/assests/robo.gif') no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+.top a{
+    color: inherit;
+    margin: 0 20px;
+    text-decoration: underline;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.nav .logo{
+    font-size: 23px;
+    font-weight: 700;
+}
+li{
+    list-style: none;
+}
+.nav a{
+    color: var(--white);
+}
+.nav a:hover{
+    text-decoration: underline;
+}
+.hero-image .content{
+    padding: 45vh 0 0 50px;
+    width: 50vw;
+    font-family: 'Quicksand';
+}
+.content h1{
+    font-size: 35px;
+}
+.get-started-btn{
+    margin: 20px 0;
+    border: none;
+    color: var(--black);
+    background: var(--white);
+    padding: 10px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Quicksand';
+}
+.get-started-btn:hover{
+    background: var(--black);
+    color: var(--white);
+}
+footer{
+    padding: 100px 50px;
+}
+footer h2{
+    text-align: center;
+}
+footer .footer-links{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+.footer-links h3{
+    text-transform: uppercase;
+}
+.footer-links ul li{
+    padding: 10px 0;
+}
+.footer-links a{
+    color: inherit;
+}
+.footer-links a:hover{
+    color: #676e8b;
+}
+.copy{
+    font-size: 25px;
 }
 
 /* playground css */
