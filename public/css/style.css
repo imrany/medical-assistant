@@ -30,7 +30,7 @@ body{
     background: var(--black);
 }
  .hero-image{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url('/assests/robo.gif') no-repeat center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url('/assests/bot.gif') no-repeat center;
     background-size: cover;
     height: 100vh;
 }
