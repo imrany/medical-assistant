@@ -1,11 +1,10 @@
 const brain =require('brain.js');
 const data=require('../db/data.json');
-const search=require('../db/search.json');
 const checker=require('../db/checker.json');
 const request = require('request');
 const network= new brain.recurrent.LSTM();
 const network2= new brain.recurrent.LSTM();
-const fs = require('fs');
+require('dotenv').config();
 
 //Training checker data
 const trainingcheckerData=checker.map(item=>({
@@ -36,7 +35,7 @@ const Ask=async(req,res)=>{
                 'method': 'POST',
                 'url': 'https://google.serper.dev/search',
                 'headers': {
-                    'X-API-KEY': '15afe59cd3f32c28b37219ee2d073b7348626de7',
+                    'X-API-KEY': process.env.SEARCH_API_KEY,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
@@ -57,10 +56,6 @@ const Ask=async(req,res)=>{
                     });
                 }
             });
-            // res.status(200).send({
-            //     msg:`${output}`,
-            //     ans:search
-            // });
         }else{
             res.status(400).send({
                 error:"Cannot generate response!",
