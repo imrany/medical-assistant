@@ -48,7 +48,7 @@ const Ask=async(req,res)=>{
             };
             request(options, (error, response) => {
                 if (error) {
-                    res.status(404).send({msg:"No Internet"})
+                    res.status(404).send({msg:error.message})
                 }else{
                     res.status(200).send({
                         msg:output,
