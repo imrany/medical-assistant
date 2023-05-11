@@ -21,7 +21,7 @@ html{
 body{
     background: rgba(68,70,84,1);
     color: var(--white);
-    font-family: 'Quicksand', monospace;
+    font-family: 'Inconsolata', monospace;
 }
 
 .index{
@@ -69,7 +69,7 @@ li{
 .hero-image .content{
     padding: 45vh 0 0 50px;
     width: 50vw;
-    font-family: 'Quicksand';
+    font-family: 'Inconsolata';
 }
 .content h1{
     font-size: 35px;
